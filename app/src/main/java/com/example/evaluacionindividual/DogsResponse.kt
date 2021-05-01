@@ -1,4 +1,4 @@
-package com.example.m4claseclase28
+package com.example.evaluacionindividual
 
 import com.google.gson.annotations.SerializedName
 

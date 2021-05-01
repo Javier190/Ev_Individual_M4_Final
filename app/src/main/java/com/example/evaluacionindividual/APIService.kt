@@ -1,4 +1,4 @@
-package com.example.m4claseclase28
+package com.example.evaluacionindividual
 
 import retrofit2.Call
 import retrofit2.http.GET

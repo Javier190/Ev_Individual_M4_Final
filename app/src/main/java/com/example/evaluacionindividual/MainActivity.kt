@@ -1,11 +1,8 @@
-package com.example.m4claseclase28
+package com.example.evaluacionindividual
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.inputmethod.InputMethodManager
-import android.widget.ImageView
 import android.widget.SearchView
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.jetbrains.anko.alert
