@@ -16,29 +16,27 @@ class MainActivity: AppCompatActivity(), android.widget.SearchView.OnQueryTextLi
     lateinit var rvDogs:RecyclerView
     lateinit var imagesPuppies:List<String>
     lateinit var dogsAdapter:DogsAdapter
-    lateinit var searchBreed:SearchView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        searchBreed = findViewById(R.id.searchBreed)
         rvDogs = findViewById(R.id.rvDogs) as RecyclerView
-        searchBreed.setOnQueryTextListener(this)
+        searchByName()
     }
 
 
     //Inicio del programa al agregar una raza en la barra de busqueda
     override fun onQueryTextSubmit(query: String?): Boolean {
-        searchByName(query!!.toLowerCase())
+        //searchByName(query!!.toLowerCase())
         return true
     }
 
     //Para tareas que requieren conexion a internet, es requerido usar Hilos, para esto ANKO.
     //Se recibe la informacion en formato JSON y se le entrega al recycler si la tarea se realizo correctamente(status)
-    private fun searchByName(query: String) {
+    private fun searchByName() {
         doAsync {
-            val call = getRetrofit().create(APIService::class.java).getCharacterByName("$query/images").execute()
+            val call = getRetrofit().create(APIService::class.java).getCharacterByName("shihtzu/images").execute()
             val puppies = call.body() as DogsResponse
             uiThread {
                 if(puppies.status == "success") {               //Obteniendo objeto DogsResponse se puede iniciar el recycler
